@@ -1,2 +1,2 @@
 # Ludo
-PAra jugar
+Para jugar y devertirse mucho. yeiii
