@@ -13,6 +13,12 @@ verde = (0,255,0)
 amarillo = (255,255,0)
 fondo = (255,250,205)
 
+#Triángulos
+triazul=[(400,350),(230,470),(230,230)]
+trirojo=[(400,350),(570,470),(230,470)]
+triverde=[(400,350),(570,470),(570,230)]
+triamarillo=[(400,350),(230,230),(570,230)]
+#(388.5,335),(230,470),(230,230)
 #Coordenadas
 
 
@@ -74,13 +80,23 @@ pygame.draw.circle(tm,negro,(640,600),20,3)
 
 #Pista
 pygame.draw.rect(tm,blanco,(40,230,720,240))
-#pygame.draw.rect(tm,blanco,())
+pygame.draw.rect(tm,blanco,(230,40,340,620))
 pygame.draw.line(tm,negro,(40,470),(40,230),3)
 pygame.draw.line(tm,negro,(760,470),(760,230),3)
 pygame.draw.line(tm,negro,(40,230),(760,230),3)
 pygame.draw.line(tm,negro,(760,470),(40,470),3)
-pygame.draw.line(tm,negro,(220,40),(570,40),3)
-pygame.draw.line(tm,negro,(220,660),(570,660),3)
+pygame.draw.line(tm,negro,(230,40),(570,40),3)
+pygame.draw.line(tm,negro,(230,660),(570,660),3)
+pygame.draw.line(tm,negro,(230,40),(230,660),3)
+pygame.draw.line(tm,negro,(570,40),(570,660),3)
+pygame.draw.polygon(tm,azul,triazul)
+pygame.draw.polygon(tm,negro,triazul,3)
+pygame.draw.polygon(tm,rojo,trirojo)
+pygame.draw.polygon(tm,negro,trirojo,3)
+pygame.draw.polygon(tm,amarillo,triamarillo)
+pygame.draw.polygon(tm,negro,triamarillo,3)
+pygame.draw.polygon(tm,verde,triverde)
+pygame.draw.polygon(tm,negro,triverde,3)
 
 
 while True:
