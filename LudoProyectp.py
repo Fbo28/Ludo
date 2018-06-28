@@ -1,7 +1,11 @@
 import pygame,sys
 from pygame.locals import *
+import random
+def dado():
+    return random.randint(1,6)
 
 pygame.init()
+
 
 #colores
 sorpresa = (86,160,25)
@@ -45,41 +49,64 @@ pygame.draw.circle(tm,negro,(130,570),93,4)
 pygame.draw.circle(tm,negro,(670,570),93,4)
 pygame.draw.circle(tm,negro,(130,130),93,4)
 pygame.draw.circle(tm,negro,(670,130),93,4)
+
+#fichas
 #Rojo
+#1
 pygame.draw.circle(tm,blanco,(160,540),20)
-pygame.draw.circle(tm,blanco,(160,600),20)
-pygame.draw.circle(tm,blanco,(100,540),20)
-pygame.draw.circle(tm,blanco,(100,600),20)
 pygame.draw.circle(tm,negro,(160,540),20,3)
+#2
+pygame.draw.circle(tm,blanco,(160,600),20)
 pygame.draw.circle(tm,negro,(160,600),20,3)
+
+#3
+pygame.draw.circle(tm,blanco,(100,540),20)
 pygame.draw.circle(tm,negro,(100,540),20,3)
+
+#4
+pygame.draw.circle(tm,blanco,(100,600),20)
 pygame.draw.circle(tm,negro,(100,600),20,3)
+
 #Azul
+#1
 pygame.draw.circle(tm,blanco,(160,100),20)
-pygame.draw.circle(tm,blanco,(160,160),20)
-pygame.draw.circle(tm,blanco,(100,100),20)
-pygame.draw.circle(tm,blanco,(100,160),20)
 pygame.draw.circle(tm,negro,(160,100),20,3)
+#2
+pygame.draw.circle(tm,blanco,(160,160),20)
 pygame.draw.circle(tm,negro,(160,160),20,3)
+#3
+pygame.draw.circle(tm,blanco,(100,100),20)
 pygame.draw.circle(tm,negro,(100,100),20,3)
+#4
+pygame.draw.circle(tm,blanco,(100,160),20)
 pygame.draw.circle(tm,negro,(100,160),20,3)
+
 #Amarillo
+#1
 pygame.draw.circle(tm,blanco,(700,100),20)
-pygame.draw.circle(tm,blanco,(700,160),20)
-pygame.draw.circle(tm,blanco,(640,100),20)
-pygame.draw.circle(tm,blanco,(640,160),20)
 pygame.draw.circle(tm,negro,(700,100),20,3)
+#2
+pygame.draw.circle(tm,blanco,(700,160),20)
 pygame.draw.circle(tm,negro,(700,160),20,3)
+#3
+pygame.draw.circle(tm,blanco,(640,100),20)
 pygame.draw.circle(tm,negro,(640,100),20,3)
+#4
+pygame.draw.circle(tm,blanco,(640,160),20)
 pygame.draw.circle(tm,negro,(640,160),20,3)
+
 #Verde
+#1
 pygame.draw.circle(tm,blanco,(700,540),20)
-pygame.draw.circle(tm,blanco,(700,600),20)
-pygame.draw.circle(tm,blanco,(640,540),20)
-pygame.draw.circle(tm,blanco,(640,600),20)
 pygame.draw.circle(tm,negro,(700,540),20,3)
+#2
+pygame.draw.circle(tm,blanco,(700,600),20)
 pygame.draw.circle(tm,negro,(700,600),20,3)
+#3
+pygame.draw.circle(tm,blanco,(640,540),20)
 pygame.draw.circle(tm,negro,(640,540),20,3)
+#4
+pygame.draw.circle(tm,blanco,(640,600),20)
 pygame.draw.circle(tm,negro,(640,600),20,3)
 
 #Pista
@@ -87,6 +114,12 @@ pygame.draw.rect(tm,blanco,(40,230,720,240))
 pygame.draw.rect(tm,blanco,(230,40,340,620))
 pygame.draw.rect(tm,azul,(103.34,310,126.66,80))
 pygame.draw.rect(tm,azul,(103.34,230,63.34,80))
+pygame.draw.rect(tm,verde,(570,310,126.68,80))
+pygame.draw.rect(tm,verde,(633.34,390,63.34,80))
+pygame.draw.rect(tm,rojo,(343.34,470,113.33,126.68))
+pygame.draw.rect(tm,rojo,(230,533.34,113.33,63.34))
+pygame.draw.rect(tm,amarillo,(343.33,103.34,113.33,126.68))
+pygame.draw.rect(tm,amarillo,(456.67,103.34,113.33,63.34))
 pygame.draw.line(tm,negro,(40,470),(40,230),3)
 pygame.draw.line(tm,negro,(760,470),(760,230),3)
 pygame.draw.line(tm,negro,(40,230),(760,230),3)
@@ -144,40 +177,59 @@ pygame.draw.circle(tm,negro,(290,390),20,2)
 
 #fichas
 #rojo
+#1
 pygame.draw.circle(tm,rojo,(160,540),10)
-pygame.draw.circle(tm,rojo,(160,600),10)
-pygame.draw.circle(tm,rojo,(100,540),10)
-pygame.draw.circle(tm,rojo,(100,600),10)
 pygame.draw.circle(tm,negro,(160,540),10,2)
+#2
+pygame.draw.circle(tm,rojo,(160,600),10)
 pygame.draw.circle(tm,negro,(160,600),10,2)
+#3
+pygame.draw.circle(tm,rojo,(100,540),10)
 pygame.draw.circle(tm,negro,(100,540),10,2)
+#4
+pygame.draw.circle(tm,rojo,(100,600),10)
 pygame.draw.circle(tm,negro,(100,600),10,2)
+
 #azul
+#1
 pygame.draw.circle(tm,azul,(160,100),10)
-pygame.draw.circle(tm,azul,(160,160),10)
-pygame.draw.circle(tm,azul,(100,100),10)
-pygame.draw.circle(tm,azul,(100,160),10)
 pygame.draw.circle(tm,negro,(160,100),10,2)
+#2
+pygame.draw.circle(tm,azul,(160,160),10)
 pygame.draw.circle(tm,negro,(160,160),10,2)
+#3
+pygame.draw.circle(tm,azul,(100,100),10)
 pygame.draw.circle(tm,negro,(100,100),10,2)
+#4
+pygame.draw.circle(tm,azul,(100,160),10)
 pygame.draw.circle(tm,negro,(100,160),10,2)
+
 #amarillo
+#1
 pygame.draw.circle(tm,amarillo,(700,100),10)
-pygame.draw.circle(tm,amarillo,(700,160),10)
-pygame.draw.circle(tm,amarillo,(640,100),10)
-pygame.draw.circle(tm,amarillo,(640,160),10)
 pygame.draw.circle(tm,negro,(700,100),10,2)
+#2
+pygame.draw.circle(tm,amarillo,(700,160),10)
 pygame.draw.circle(tm,negro,(700,160),10,2)
+#3
+pygame.draw.circle(tm,amarillo,(640,100),10)
 pygame.draw.circle(tm,negro,(640,100),10,2)
+#4
+pygame.draw.circle(tm,amarillo,(640,160),10)
 pygame.draw.circle(tm,negro,(640,160),10,2)
+
 #verde
+#1
 pygame.draw.circle(tm,verde,(700,540),10)
-pygame.draw.circle(tm,verde,(700,600),10)
-pygame.draw.circle(tm,verde,(640,540),10)
-pygame.draw.circle(tm,verde,(640,600),10)
 pygame.draw.circle(tm,negro,(700,540),10,2)
+#2
+pygame.draw.circle(tm,verde,(700,600),10)
 pygame.draw.circle(tm,negro,(700,600),10,2)
+#3
+pygame.draw.circle(tm,verde,(640,540),10)
 pygame.draw.circle(tm,negro,(640,540),10,2)
+#4
+pygame.draw.circle(tm,verde,(640,600),10)
 pygame.draw.circle(tm,negro,(640,600),10,2)
 
 #casillas
@@ -203,7 +255,6 @@ pygame.draw.line(tm,negro,(166.68,230),(166.68,470),3)
 pygame.draw.line(tm,negro,(343.34,230),(230,166.68),3)
 pygame.draw.line(tm,negro,(230,166.68),(343.34,103.34),3)
 pygame.draw.line(tm,negro,(343.34,103.34),(230,40),3)
-
 pygame.draw.line(tm,negro,(456.68,103.34),(570,40),3)
 pygame.draw.line(tm,negro,(456.68,103.34),(570,166.68),3)
 pygame.draw.line(tm,negro,(570,166.68),(456.668,230),3)
@@ -229,11 +280,21 @@ pygame.draw.line(tm,negro,(40,230),(103.34,310),3)
 pygame.draw.line(tm,negro,(103.34,310),(166.68,230),3)
 pygame.draw.line(tm,negro,(166.68,230),(230,310),3)
 pygame.draw.line(tm,negro,(230,310),(343.34,230),3)
-
 pygame.draw.line(tm,negro,(40,350),(103.34,350),3)
 pygame.draw.line(tm,negro,(135.01,310),(135.01,390),3)
 pygame.draw.line(tm,negro,(198.34,310),(198.34,390),3)
-#pygame.draw.line()
+pygame.draw.line(tm,negro,(760,350),(696.68,350),3)
+pygame.draw.line(tm,negro,(665.01,310),(665.01,390),3)
+pygame.draw.line(tm,negro,(601.67,310),(601.67,390),3)
+pygame.draw.line(tm,negro,(400,660),(400,596.67),3)
+pygame.draw.line(tm,negro,(343.33,565.01),(456.67,565.01),3)
+pygame.draw.line(tm,negro,(343.33,501.67),(456.67,501.67),3)
+pygame.draw.line(tm,negro,(400,660),(400,596.67),3)
+pygame.draw.line(tm,negro,(400,40),(400,103.34),3)
+pygame.draw.line(tm,negro,(343.33,135.01),(456.67,135.01),3)
+pygame.draw.line(tm,negro,(343.33,198.35),(456.67,198.35),3)
+
+
 
 
 while True:
@@ -243,8 +304,10 @@ while True:
             sys.exit()
         elif evento.type==pygame.KEYUP:
             fuente=pygame.font.Font(None,30)
-            text=fuente.render("Cayo: "+str(dado()),0,(0,0,0))
+            text=fuente.render("Cayó: "+str(dado()),0,(0,0,0))
             tm.blit(text,(780,350))
         elif evento.type==pygame.KEYDOWN:
             pygame.draw.rect(tm,fondo,(780,350,80,100))
-        pygame.display.update()
+
+    print(pygame.mouse.get_pos())
+    pygame.display.update()
