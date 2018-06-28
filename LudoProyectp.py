@@ -197,6 +197,11 @@ while True:
         if evento.type == QUIT:
             pygame.quit()
             sys.exit()
-
+        elif evento.type==pygame.KEYUP:
+            fuente=pygame.font.Font(None,30)
+            text=fuente.render("Cayo: "+str(dado()),0,(0,0,0))
+            tm.blit(text,(780,350))
+        elif evento.type==pygame.KEYDOWN:
+            pygame.draw.rect(tm,fondo,(780,350,80,100))
         pygame.display.update()
 
