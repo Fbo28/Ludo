@@ -85,6 +85,8 @@ pygame.draw.circle(tm,negro,(640,600),20,3)
 #Pista
 pygame.draw.rect(tm,blanco,(40,230,720,240))
 pygame.draw.rect(tm,blanco,(230,40,340,620))
+pygame.draw.rect(tm,azul,(103.34,310,126.66,80))
+pygame.draw.rect(tm,azul,(103.34,230,63.34,80))
 pygame.draw.line(tm,negro,(40,470),(40,230),3)
 pygame.draw.line(tm,negro,(760,470),(760,230),3)
 pygame.draw.line(tm,negro,(40,230),(760,230),3)
@@ -187,11 +189,53 @@ pygame.draw.line(tm,negro,(40,310),(230,310),3)
 pygame.draw.line(tm,negro,(40,390),(230,390),3)
 pygame.draw.line(tm,negro,(760,310),(570,310),3)
 pygame.draw.line(tm,negro,(760,390),(570,390),3)
+pygame.draw.line(tm,negro,(230,103.34),(570,103.34),3)
+pygame.draw.line(tm,negro,(230,166.68),(570,166.68),3)
+pygame.draw.line(tm,negro,(230,533.34),(570,533.34),3)
+pygame.draw.line(tm,negro,(230,596.68),(570,596.68),3)
+pygame.draw.line(tm,negro,(633.34,230),(633.34,470),3)
+pygame.draw.line(tm,negro,(696.68,230),(696.68,470),3)
+pygame.draw.line(tm,negro,(103.34,230),(103.34,470),3)
+pygame.draw.line(tm,negro,(166.68,230),(166.68,470),3)
 
 
+#diagonales
+pygame.draw.line(tm,negro,(343.34,230),(230,166.68),3)
+pygame.draw.line(tm,negro,(230,166.68),(343.34,103.34),3)
+pygame.draw.line(tm,negro,(343.34,103.34),(230,40),3)
+
+pygame.draw.line(tm,negro,(456.68,103.34),(570,40),3)
+pygame.draw.line(tm,negro,(456.68,103.34),(570,166.68),3)
+pygame.draw.line(tm,negro,(570,166.68),(456.668,230),3)
+pygame.draw.line(tm,negro,(570,310),(456.668,230),3)
+pygame.draw.line(tm,negro,(570,310),(633.348,230),3)
+pygame.draw.line(tm,negro,(633.348,230),(696.68,310),3)
+pygame.draw.line(tm,negro,(696.68,310),(760,230),3)
+pygame.draw.line(tm,negro,(760,470),(696.68,390),3)
+pygame.draw.line(tm,negro,(696.68,390),(633.34,470),3)
+pygame.draw.line(tm,negro,(633.34,470),(570,390),3)
+pygame.draw.line(tm,negro,(570,390),(456.68,470),3)
+pygame.draw.line(tm,negro,(456.68,470),(570,533.34),3)
+pygame.draw.line(tm,negro,(570,533.34),(456.68,596.68),3)
+pygame.draw.line(tm,negro,(456.68,596.68),(570,660),3)
+pygame.draw.line(tm,negro,(230,660),(343.34,596.68),3)
+pygame.draw.line(tm,negro,(343.34,596.68),(230,533.34),3)
+pygame.draw.line(tm,negro,(230,533.34),(343.34,470),3)
+pygame.draw.line(tm,negro,(343.34,470),(230,390),3)
+pygame.draw.line(tm,negro,(230,390),(166.68,470),3)
+pygame.draw.line(tm,negro,(166.68,470),(103.34,390),3)
+pygame.draw.line(tm,negro,(103.34,390),(40,470),3)
+pygame.draw.line(tm,negro,(40,230),(103.34,310),3)
+pygame.draw.line(tm,negro,(103.34,310),(166.68,230),3)
+pygame.draw.line(tm,negro,(166.68,230),(230,310),3)
+pygame.draw.line(tm,negro,(230,310),(343.34,230),3)
+
+pygame.draw.line(tm,negro,(40,350),(103.34,350),3)
+pygame.draw.line(tm,negro,(135.01,310),(135.01,390),3)
+pygame.draw.line(tm,negro,(198.34,310),(198.34,390),3)
+#pygame.draw.line()
 
 
-#400,350
 while True:
     for evento in pygame.event.get():
         if evento.type == QUIT:
@@ -204,4 +248,3 @@ while True:
         elif evento.type==pygame.KEYDOWN:
             pygame.draw.rect(tm,fondo,(780,350,80,100))
         pygame.display.update()
-
