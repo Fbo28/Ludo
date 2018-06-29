@@ -214,18 +214,7 @@ pygame.draw.circle(tm,rojo,(100,600),10)
 pygame.draw.circle(tm,negro,(100,600),10,2)
 
 #azul
-#1
-pygame.draw.circle(tm, azul, (moveazul1[0]), 10)
-pygame.draw.circle(tm, negro, (moveazul1[0]), 10, 2)
-#2
-pygame.draw.circle(tm,azul,(160,160),10)
-pygame.draw.circle(tm,negro,(160,160),10,2)
-#3
-pygame.draw.circle(tm,azul,(100,100),10)
-pygame.draw.circle(tm,negro,(100,100),10,2)
-#4
-pygame.draw.circle(tm,azul,(100,160),10)
-pygame.draw.circle(tm,negro,(100,160),10,2)
+
 
 #amarillo
 #1
@@ -321,6 +310,22 @@ pygame.draw.line(tm,negro,(343.33,198.35),(456.67,198.35),3)
 while True:
     for evento in pygame.event.get():
         ndado = dado()
+        a=0
+        player=1
+
+        # 1
+        az=pygame.draw.circle(tm, azul, (moveazul1[0]), 10)
+        pygame.draw.circle(tm, negro, (moveazul1[0]), 10, 2)
+        # 2
+        pygame.draw.circle(tm, azul, (160, 160), 10)
+        pygame.draw.circle(tm, negro, (160, 160), 10, 2)
+        # 3
+        pygame.draw.circle(tm, azul, (100, 100), 10)
+        pygame.draw.circle(tm, negro, (100, 100), 10, 2)
+        # 4
+        pygame.draw.circle(tm, azul, (100, 160), 10)
+        pygame.draw.circle(tm, negro, (100, 160), 10, 2)
+
         if evento.type == QUIT:
             pygame.quit()
             sys.exit()
@@ -328,14 +333,23 @@ while True:
             fuente=pygame.font.Font(None,30)
             text=fuente.render("Cayó: "+str(ndado),0,(0,0,0))
             tm.blit(text,(780,350))
-            if ndado == 6 or ndado == 1:
-                pygame.draw.circle(tm, azul, (moveazul1[0 + 1]), 10)
-                pygame.draw.circle(tm, negro, (moveazul1[0 + 1]), 10, 2)
-                print(ndado)
+            if player==1:
+                if az==True:
+                    if  ndado == 6 or ndado == 1:
+                        a+=1
+                        pygame.draw.circle(tm, azul, (moveazul1[a]), 10)
+                        pygame.draw.circle(tm, negro, (moveazul1[a]), 10, 2)
+                    else: player+=1
+                elif pygame.draw.circle(tm, azul, (moveazul1[a]), 10):
+                    if ndado<6:
+                        pygame.draw.circle(tm, azul, (moveazul1[a+ndado]), 10)
+                    else: pygame.draw.circle(tm, azul, (moveazul1[a+6]), 10)
+
+            print(ndado)
         elif evento.type==pygame.KEYDOWN:
             pygame.draw.rect(tm,fondo,(780,350,80,100))
 
-        
+
 
 
     pygame.display.update()
