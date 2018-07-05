@@ -367,11 +367,15 @@ while True:
         pygame.draw.circle(tm, azul, (moveazul1[a]), 10)
         pygame.draw.circle(tm, negro, (moveazul1[a]), 10, 2)
         # 2
-        pygame.draw.circle(tm, azul, (160, 160), 10)
-        pygame.draw.circle(tm, negro, (160, 160), 10, 2)
+        if cba1==0:
+
+          pygame.draw.circle(tm, azul, (160, 160), 10)
+          pygame.draw.circle(tm, negro, (160, 160), 10, 2)
         # 3
-        pygame.draw.circle(tm, azul, (100, 100), 10)
-        pygame.draw.circle(tm, negro, (100, 100), 10, 2)
+        if cba1==0:
+
+          pygame.draw.circle(tm, azul, (100, 100), 10)
+          pygame.draw.circle(tm, negro, (100, 100), 10, 2)
         # 4
         pygame.draw.circle(tm, azul, (100,160), 10)
         pygame.draw.circle(tm, negro, (100,160), 10, 2)
@@ -380,11 +384,15 @@ while True:
         pygame.draw.circle(tm, rojo, (moverojo1[b]), 10)
         pygame.draw.circle(tm, negro, (moverojo1[b]), 10, 2)
         # 2
-        pygame.draw.circle(tm, rojo, (160, 600), 10)
-        pygame.draw.circle(tm, negro, (160, 600), 10, 2)
+        if cbr1==0:
+
+          pygame.draw.circle(tm, rojo, (160, 600), 10)
+          pygame.draw.circle(tm, negro, (160, 600), 10, 2)
         # 3
-        pygame.draw.circle(tm, rojo, (100, 540), 10)
-        pygame.draw.circle(tm, negro, (100, 540), 10, 2)
+        if cbr2==0:
+
+          pygame.draw.circle(tm, rojo, (100, 540), 10)
+          pygame.draw.circle(tm, negro, (100, 540), 10, 2)
         # 4
         pygame.draw.circle(tm, rojo, (100, 600), 10)
         pygame.draw.circle(tm, negro, (100, 600), 10, 2)
@@ -398,26 +406,62 @@ while True:
             tm.blit(text,(780,350))
             player = 1
             if player==1:
+                cba1=0
+                cba2=0
                 if  pygame.draw.circle(tm, azul, (moveazul1[a]), 10):
                     if  ndado == 6 or ndado == 1:
-                        a+=1
+                        a+=ndado
+
                         az=pygame.draw.circle(tm, azul, (moveazul1[a]), 10)
                         ax=pygame.draw.circle(tm, negro, (moveazul1[a]), 10, 2)
+                        if ndado==1:
+                            pygame.draw.circle(tm, blanco, (160, 160), 10)
+                            cba1+=1
+                        if ndado==6:
+                            pygame.draw.circle(tm, blanco, (100, 100), 10)
+                            cba2+=1
+
+                    elif ndado!=6 or 1:
+                        player+=1
                     else: player+=1
-                elif pygame.draw.circle(tm, azul, (moveazul1[a]), 10):
-                    if ndado<6:
-                        pygame.draw.circle(tm, azul, (moveazul1[a+ndado]), 10)
-                        pygame.draw.circle(tm, negro, (moveazul1[a+ndado]), 10, 2)
-                    else:
-                        pygame.draw.circle(tm, azul, (moveazul1[a+6]), 10)
-                        pygame.draw.circle(tm, negro, (moveazul1[a+6]), 10, 2)
-            elif player==2:
-                if pygame.draw.circle(tm, rojo, (moverojo1[b]), 10):
-                    if ndado == 6 or ndado == 1:
-                        b += 1
+
+                ndado=dado()
+                tiro2=ndado
+            if player==2:
+                cbr1=0
+                cbr2=0
+                if tiro2 ==1 or tiro2==6:
+                 if pygame.draw.circle(tm, rojo, (moverojo1[b]), 10) and ndado ==6 or 1:
+                    if tiro2==6 or 1 :
+                        b += ndado
                         bz = pygame.draw.circle(tm, rojo, (moverojo1[b]), 10)
                         bx = pygame.draw.circle(tm, negro, (moverojo1[b]), 10, 2)
+                        if tiro2==1:
+                            pygame.draw.circle(tm, blanco, (160, 600), 10)
+                            pygame.draw.circle(tm,blanco,(850,360),15,14)
+                            fuente = pygame.font.Font(None, 30)
+                            text = fuente.render( str(ndado), 0, (0, 0, 0))
+                            tm.blit(text, (850, 350))
+                            cbr1+=1
+
+
+                        if tiro2==6:
+                            pygame.draw.circle(tm, blanco, (100, 540), 10)
+                            pygame.draw.circle(tm, blanco, (850, 360), 15, 14)
+                            fuente = pygame.font.Font(None, 30)
+                            text = fuente.render( str(ndado), 0, (0, 0, 0))
+                            tm.blit(text, (850, 350))
+                            cbr2+=1
+
+                        player-=1
                     else: player-=1
+
+
+
+
+
+
+
 
 
             print(ndado)
