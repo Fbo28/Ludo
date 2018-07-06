@@ -311,6 +311,33 @@ pygame.draw.line(tm,negro,(400,660),(400,596.67),3)
 pygame.draw.line(tm,negro,(400,40),(400,103.34),3)
 pygame.draw.line(tm,negro,(343.33,135.01),(456.67,135.01),3)
 pygame.draw.line(tm,negro,(343.33,198.35),(456.67,198.35),3)
+b=0
+a=0
+
+pygame.draw.circle(tm, azul, (moveazul1[a]), 10)
+pygame.draw.circle(tm, negro, (moveazul1[a]), 10, 2)
+        # 2
+pygame.draw.circle(tm, azul, (160, 160), 10)
+pygame.draw.circle(tm, negro, (160, 160), 10, 2)
+        # 3
+pygame.draw.circle(tm, azul, (100, 100), 10)
+pygame.draw.circle(tm, negro, (100, 100), 10, 2)
+        # 4
+pygame.draw.circle(tm, azul, (100,160), 10)
+pygame.draw.circle(tm, negro, (100,160), 10, 2)
+pygame.draw.circle(tm, rojo, (moverojo1[b]), 10)
+pygame.draw.circle(tm, negro, (moverojo1[b]), 10, 2)
+        # 2
+pygame.draw.circle(tm, rojo, (160, 600), 10)
+pygame.draw.circle(tm, negro, (160, 600), 10, 2)
+        # 3
+pygame.draw.circle(tm, rojo, (100, 540), 10)
+pygame.draw.circle(tm, negro, (100, 540), 10, 2)
+        # 4
+pygame.draw.circle(tm, rojo, (100, 600), 10)
+pygame.draw.circle(tm, negro, (100, 600), 10, 2)
+
+
 
 
 while True:
@@ -363,39 +390,7 @@ while True:
         a = 0
         b = 0
 
-        # 1
-        pygame.draw.circle(tm, azul, (moveazul1[a]), 10)
-        pygame.draw.circle(tm, negro, (moveazul1[a]), 10, 2)
-        # 2
-        if cba1==0:
 
-          pygame.draw.circle(tm, azul, (160, 160), 10)
-          pygame.draw.circle(tm, negro, (160, 160), 10, 2)
-        # 3
-        if cba1==0:
-
-          pygame.draw.circle(tm, azul, (100, 100), 10)
-          pygame.draw.circle(tm, negro, (100, 100), 10, 2)
-        # 4
-        pygame.draw.circle(tm, azul, (100,160), 10)
-        pygame.draw.circle(tm, negro, (100,160), 10, 2)
-
-        # 1
-        pygame.draw.circle(tm, rojo, (moverojo1[b]), 10)
-        pygame.draw.circle(tm, negro, (moverojo1[b]), 10, 2)
-        # 2
-        if cbr1==0:
-
-          pygame.draw.circle(tm, rojo, (160, 600), 10)
-          pygame.draw.circle(tm, negro, (160, 600), 10, 2)
-        # 3
-        if cbr2==0:
-
-          pygame.draw.circle(tm, rojo, (100, 540), 10)
-          pygame.draw.circle(tm, negro, (100, 540), 10, 2)
-        # 4
-        pygame.draw.circle(tm, rojo, (100, 600), 10)
-        pygame.draw.circle(tm, negro, (100, 600), 10, 2)
 
         if evento.type == QUIT:
             pygame.quit()
@@ -406,8 +401,6 @@ while True:
             tm.blit(text,(780,350))
             player = 1
             if player==1:
-                cba1=0
-                cba2=0
                 if  pygame.draw.circle(tm, azul, (moveazul1[a]), 10):
                     if  ndado == 6 or ndado == 1:
                         a+=ndado
@@ -416,10 +409,8 @@ while True:
                         ax=pygame.draw.circle(tm, negro, (moveazul1[a]), 10, 2)
                         if ndado==1:
                             pygame.draw.circle(tm, blanco, (160, 160), 10)
-                            cba1+=1
                         if ndado==6:
                             pygame.draw.circle(tm, blanco, (100, 100), 10)
-                            cba2+=1
 
                     elif ndado!=6 or 1:
                         player+=1
@@ -428,8 +419,6 @@ while True:
                 ndado=dado()
                 tiro2=ndado
             if player==2:
-                cbr1=0
-                cbr2=0
                 if tiro2 ==1 or tiro2==6:
                  if pygame.draw.circle(tm, rojo, (moverojo1[b]), 10) and ndado ==6 or 1:
                     if tiro2==6 or 1 :
@@ -442,7 +431,6 @@ while True:
                             fuente = pygame.font.Font(None, 30)
                             text = fuente.render( str(ndado), 0, (0, 0, 0))
                             tm.blit(text, (850, 350))
-                            cbr1+=1
 
 
                         if tiro2==6:
@@ -451,11 +439,9 @@ while True:
                             fuente = pygame.font.Font(None, 30)
                             text = fuente.render( str(ndado), 0, (0, 0, 0))
                             tm.blit(text, (850, 350))
-                            cbr2+=1
 
                         player-=1
                     else: player-=1
-
 
 
 
@@ -470,4 +456,10 @@ while True:
     print(pygame.mouse.get_pos())
 
     pygame.display.update()
+
+
+
+
+
+
 
